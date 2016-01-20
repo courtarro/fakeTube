@@ -2,6 +2,8 @@
 
 TF2 fakeTube is an extremely barebones YouTube 2.0 API emulator to support the TF2 YouTube achievements.
 
+**Use at your own risk!** I take no responsibility for what this does to you, your Steam account, your TF2 hat collection, or your neighbor's pet labradoodle. It seems quite safe to me, but it's up to you to decide whether you feel that this trick is okay to use on your own account.
+
 ## Introduction
 
 This project exists to support users who want to "earn" the achievements in Team Fortress 2 related to replay uploads and views on YouTube. Since the YouTube APIs that TF2 used to upload and check view counts have been long since decommissioned by Google, it's impossible to earn these achievements naturally. Since Valve isn't maintaining the replay feature, (the official servers don't even record them any more), I figure they won't care if we jump through some hoops to satisfy our O.C.D. desires to have as many achievements as we can get.
