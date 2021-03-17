@@ -12,7 +12,7 @@ Earn the rest naturally, of course. Achievement servers and cheats are lame. Exc
 
 ## Dependencies
 
-- Python 2.7
+- Python 3
 
 ## Building Your Replay
 
@@ -28,49 +28,49 @@ Earn the rest naturally, of course. Achievement servers and cheats are lame. Exc
 2. Find the `.dmx` file that was just created for your shiny new rendered video. The first one will probably be named `movie_1000.dmx`.
 3. Open the `.dmx` file in a text editor. You'll see something that looks like this:
 
-		"movie_10000"
-		{
-			"handle"		"10000"
-			"replay_handle"		"97"
-			"rendered"		"1"
-			"title"		"Explosive Action"
-			"filename"		"20110527-224739-ctf_turbine_97_22_0.mov"
-			"uploaded"		"0"
-			"rendertime"		"2051.257080"
-			"length"		"60.704998"
-			"date"		"1178"
-			"time"		"120087"
-			"rendersettings"
-			{
-				"width"		"1920"
-				"height"		"1080"
-				"MotionBlurQuality"		"3"
-				"fps.ups"		"24000"
-				"fps.upf"		"1001"
-				"codec"		"4"
-				"encoding_quality"		"100"
-				"mb_enabled"		"1"
-				"aa_enabled"		"1"
-				"raw"		"0"
-			}
-		}
+        "movie_10000"
+        {
+            "handle"        "10000"
+            "replay_handle" "97"
+            "rendered"      "1"
+            "title"         "Explosive Action"
+            "filename"      "20110527-224739-ctf_turbine_97_22_0.mov"
+            "uploaded"      "0"
+            "rendertime"    "2051.257080"
+            "length"        "60.704998"
+            "date"          "1178"
+            "time"          "120087"
+            "rendersettings"
+            {
+                "width"             "1920"
+                "height"            "1080"
+                "MotionBlurQuality" "3"
+                "fps.ups"           "24000"
+                "fps.upf"           "1001"
+                "codec"             "4"
+                "encoding_quality"  "100"
+                "mb_enabled"        "1"
+                "aa_enabled"        "1"
+                "raw"               "0"
+            }
+        }
 
 4. Change the `"0"` next to `"uploaded"` to `"1"`.
 5. Above the `"uploaded"` line, add this line:
 
-		"upload_url"		"http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
+        "upload_url"        "http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
 
 6. Now the part you edited should look like below. If not, fix it.
 
-		...
-			"title"		"Explosive Action"
-			"filename"		"20110527-224739-ctf_turbine_97_22_0.mov"
-			"upload_url"		"http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
-			"uploaded"		"1"
-			"rendertime"		"2051.257080"
-			"length"		"60.704998"
-		...
-		
+        ...
+            "title"         "Explosive Action"
+            "filename"      "20110527-224739-ctf_turbine_97_22_0.mov"
+            "upload_url"    "http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
+            "uploaded"      "1"
+            "rendertime"    "2051.257080"
+            "length"        "60.704998"
+        ...
+        
 7. Save and close the file.
 
 Now we have a nice, fake URL for TF2 to find and check, but even if you had a video living at user "bubba" and with the ID "myAwesomeVideo", YouTube's 2.0 API is defunct and TF2 wouldn't be able to find it. That's where we need a fake web server running to answer TF2's queries.
@@ -79,7 +79,7 @@ Now we have a nice, fake URL for TF2 to find and check, but even if you had a vi
 
 This step will create a web server running locally, but we will also need to tell TF2 that we'll be serving `gdata.youtube.com`, thank you very much.
 
-1. Install Python 2.7
+1. Install Python 3
 2. Run the included web server: `python server.py`
 3. Check that Python says `Serving at port: 80`. If so, the web server is running.
 
