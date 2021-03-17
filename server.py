@@ -1,14 +1,10 @@
-#!/usr/bin/env python
+import http.server
+import socketserver
 
-import SimpleHTTPServer
-import SocketServer
+PORT = 80
 
-LISTEN_PORT = 80
+handler = http.server.SimpleHTTPRequestHandler
 
-if __name__ == '__main__':
-    Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-
-    httpd = SocketServer.TCPServer(("", LISTEN_PORT), Handler)
-
-    print "Serving at port", LISTEN_PORT
+with socketserver.TCPServer(("", PORT), handler) as httpd:
+    print("Serving at port: " + str(PORT))
     httpd.serve_forever()

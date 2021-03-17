@@ -58,14 +58,14 @@ Earn the rest naturally, of course. Achievement servers and cheats are lame. Exc
 4. Change the `"0"` next to `"uploaded"` to `"1"`.
 5. Above the `"uploaded"` line, add this line:
 
-		"upload_url"		"http://gdata.youtube.com/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2"
+		"upload_url"		"http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
 
 6. Now the part you edited should look like below. If not, fix it.
 
 		...
 			"title"		"Explosive Action"
 			"filename"		"20110527-224739-ctf_turbine_97_22_0.mov"
-			"upload_url"		"http://gdata.youtube.com/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2"
+			"upload_url"		"http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2​"
 			"uploaded"		"1"
 			"rendertime"		"2051.257080"
 			"length"		"60.704998"
@@ -81,15 +81,7 @@ This step will create a web server running locally, but we will also need to tel
 
 1. Install Python 2.7
 2. Run the included web server: `python server.py`
-3. Check that Python says `Serving at port 80`. If so, the web server is running.
-4. Open `C:\Windows\System32\drivers\etc\hosts` in your favorite text editor. Note that 32-bit text editors may not be able to see the `etc` directory inside `drivers`, so you might need to type that manually. That's because Windows is hiding 64-bit stuff from the 32-bit program.
-5. Anyway, add this line to the bottom of the file:
-
-		127.0.0.1 gdata.youtube.com
-		
-6. Save your `hosts` file. Make sure it didn't get saved as `hosts.txt`; that won't work.
-	
-This tells Windows that the specific YouTube server is actually hosted locally.
+3. Check that Python says `Serving at port: 80`. If so, the web server is running.
 
 ## Complete the Achievements
 
@@ -101,14 +93,9 @@ At this point, TF2 should immediately pop up all your new achievements. If not, 
 
 ## Cleanup
 
-1. **Important!** When you're finished, don't forget to edit your `hosts` file and remove the `gdata.youtube.com` line you added.
-2. You can kill the Python process by pressing `Ctrl-C`.
+1. You can kill the Python process by pressing `Ctrl-C`.
 
 ## Troubleshooting
 
-- Once the web server is running and you've set up the `hosts` file change, open [this address](http://gdata.youtube.com/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2) and see what you get. If you get a bunch of XML or a download named "myAwesomeVideo", your web server is working.
-  - If you get an error that the page is not available, or `ERR_INVALID_RESPONSE`, then your `hosts` change may not be working.
-- Try [this address](http://localhost/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2) to directly connect without the `hosts` file.
-  - If the above did not work, but this does, then something's wrong with your `hosts` file change.
-- Check your Python instance to make sure it's still running. If Python starts and immediately goes away, it's not working. Try running it from a command prompt so you can check for errors.
-- Check to make sure no other services are running on your computer with port :80 open. If that's the case, the Python server won't be able to use that port. I doubt TF2 will know how to work with other ports. I know I was unable to get it to connect directly to localhost, thus requiring the `hosts` change.
+- Once the web server is running, open [this address](http://127.0.0.1/feeds/api/users/bubba/uploads/myAwesomeVideo?v=2) and see what you get. If you get a bunch of XML or a download named "myAwesomeVideo", your web server is working.
+- Since 80 is a privileged port, you will need to give administrator permissions to the web server.
