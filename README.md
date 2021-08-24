@@ -12,7 +12,7 @@ Earn the rest naturally, of course. Achievement servers and cheats are lame. Exc
 
 ## Dependencies
 
-- Python 3
+- Python 3.6 or newer
 
 ## Building Your Replay
 
@@ -79,7 +79,7 @@ Now we have a nice, fake URL for TF2 to find and check, but even if you had a vi
 
 This step will create a web server running locally, but we will also need to tell TF2 that we'll be serving `gdata.youtube.com`, thank you very much.
 
-1. Install Python 3
+1. Install Python 3.6 or newer
 2. Run the included web server: `python server.py`
 3. Check that Python says `Serving at port: 80`. If so, the web server is running.
 
